@@ -9,21 +9,35 @@ Beyond coding, I am passionate about mentoring junior developers and streamlinin
 
 ## 🚀 Featured Engineering Projects
 
-### 1. Agentic AI Job Matcher & CV Review System
+### 1. StudyPilot — AI Study Copilot
+[**🔗 View Repository**](https://github.com/zweyaungnitun/study-copilot)
+
+Builds a study roadmap and a day-by-day schedule from a student's own uploaded materials, then tutors from those materials with cited answers.
+* **Architecture:** Tool-using planner and tutor agents built with **LangChain** on the **LangGraph** runtime, with guardrail middleware. Code validates each agent proposal before it is applied. Stack: FastAPI, Gemini, Chroma / pgvector, React and TypeScript.
+* **Core Mechanics:** **Hybrid keyword + semantic retrieval** over a background ingestion pipeline for PDFs, scans (OCR), notes, and web pages. Includes per-user LLM token quotas, **Langfuse** tracing, **DeepEval** quality evals, and unit, integration, and end-to-end tests with pytest.
+
+### 2. Vault Assistant — Offline Document AI
+[**🔗 View Repository**](https://github.com/zweyaungnitun/vault-assistant)
+
+A personal document assistant that answers questions about local documents with citations. It also summarizes documents, extracts action items, flags PII, and creates reminders, and no data leaves the device.
+* **Architecture:** Python, **SQLite (FTS5)** and FastAPI. Uses local **Ollama** models by default and also works with OpenAI, Anthropic, Gemini, and OpenAI-compatible providers. Optional self-hosted Langfuse tracing.
+* **Core Mechanics:** Hybrid retrieval merges vector search and **BM25** keyword search with **reciprocal rank fusion**. An agentic Q&A pipeline breaks questions down, scores evidence, and verifies answers.
+
+### 3. Agentic AI Job Matcher & CV Review System
 [**🔗 View Repository**](https://github.com/zweyaungnitun/AI-Resume-Job-Matching-Agent.git)
 
 An intelligent pipeline designed to automate and enhance technical recruitment processes through advanced natural language understanding and multi-agent coordination.
 * **Architecture:** Built utilizing **FastAPI** for robust backend routing, seamlessly integrated with **LangGraph** to orchestrate complex, multi-agent workflows.
 * **Core Mechanics:** Leverages advanced Retrieval-Augmented Generation (RAG) and vector database indexing to parse, analyze, and query unstructured CV data against dynamic job requirement matrices.
 
-### 2. AI Astrologer System
+### 4. AI Astrologer System
 [**🔗 View Repository**](https://github.com/zweyaungnitun/AI-Astrology-chatbot-api)
 
 An analytical engine combining traditional event prediction systems with modern AI capabilities to automate and translate complex birth chart interpretations.
 * **Architecture:** Utilizes **Python** libraries and specialized external APIs to retrieve, compute, and parse astronomical data, focusing heavily on Vedic and Krishnamurti Padhdhati (KP) astrological frameworks.
 * **Core Mechanics:** Processes raw chart mechanics—such as precise planetary strength ratios, significators, and dasha sequences—and leverages LLMs to generate comprehensive, narrative-driven readings and compatibility analyses.
 
-### 3. Agent Evaluation Suite
+### 5. Agent Evaluation Suite
 [**🔗 View Repository**](https://github.com/zweyaungnitun/agent-eval-suite)
 
 A reusable evaluation harness for **LangChain** and **LangGraph** agents that automates quality scoring and gates CI builds on metric thresholds.
@@ -31,15 +45,7 @@ A reusable evaluation harness for **LangChain** and **LangGraph** agents that au
 * **Core Mechanics:** Stacks three metric layers — **RAGAS** for RAG quality, **DeepEval** for assertion-style checks, and custom **trajectory analysis** — and emits per-run traces to **LangSmith** or **Arize Phoenix** for failure inspection.
 
 
-### 4. Agentic Nutrition Analyst
-[**🔗 View Repository**](https://github.com/zweyaungnitun/AI-Nutrition-Analyst)
-
-A multimodal AI agent that acts as a personal nutrition coach, analyzing meal photos to deliver accurate calorie breakdowns, macro estimates, and conversational health advice backed by verified nutritional data.
-* **Architecture:** A LangGraph-orchestrated multi-node pipeline routes each input through a Router Node that dynamically decides between visual analysis and conversational response, with persistent memory across turns enabling context-aware follow-up questions.
-* **Core Mechanics:** Combines GPT-4o / Gemini 1.5 Flash vision models for ingredient detection and portion estimation with USDA FoodData Central API cross-referencing for data-verified calorie counts, all surfaced through a Gradio chat interface via OpenRouter.
-
-
-### 5. Vector Store Service
+### 6. Vector Store Service
 [**🔗 View Repository**](https://github.com/zweyaungnitun/vector-store-service)
 
 A production-ready semantic ingestion and search platform for HR analytics, enabling intelligent resume screening, job-to-skill matching, and talent discovery by converting unstructured HR documents into searchable vector embeddings across pluggable cloud and local backends.
